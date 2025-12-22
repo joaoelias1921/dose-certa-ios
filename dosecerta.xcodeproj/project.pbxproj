@@ -6,8 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F6A2F2462EF9811900B1E2C5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F6A2F2452EF9811900B1E2C5 /* FirebaseAuth */; };
+		F6A2F2482EF9811900B1E2C5 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F6A2F2472EF9811900B1E2C5 /* FirebaseCore */; };
+		F6A2F24A2EF9811900B1E2C5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F6A2F2492EF9811900B1E2C5 /* FirebaseFirestore */; };
+		F6A2F2702EF9D17A00B1E2C5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F6A2F26E2EF9D17400B1E2C5 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F6A2F2342EF97EC300B1E2C5 /* dosecerta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dosecerta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A2F26E2EF9D17400B1E2C5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +31,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A2F2482EF9811900B1E2C5 /* FirebaseCore in Frameworks */,
+				F6A2F2462EF9811900B1E2C5 /* FirebaseAuth in Frameworks */,
+				F6A2F24A2EF9811900B1E2C5 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +45,7 @@
 			children = (
 				F6A2F2362EF97EC300B1E2C5 /* dosecerta */,
 				F6A2F2352EF97EC300B1E2C5 /* Products */,
+				F6A2F26E2EF9D17400B1E2C5 /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +77,9 @@
 			);
 			name = dosecerta;
 			packageProductDependencies = (
+				F6A2F2452EF9811900B1E2C5 /* FirebaseAuth */,
+				F6A2F2472EF9811900B1E2C5 /* FirebaseCore */,
+				F6A2F2492EF9811900B1E2C5 /* FirebaseFirestore */,
 			);
 			productName = dosecerta;
 			productReference = F6A2F2342EF97EC300B1E2C5 /* dosecerta.app */;
@@ -94,6 +109,9 @@
 			);
 			mainGroup = F6A2F22B2EF97EC300B1E2C5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F6A2F2442EF9811900B1E2C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F6A2F2352EF97EC300B1E2C5 /* Products */;
 			projectDirPath = "";
@@ -109,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A2F2702EF9D17A00B1E2C5 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,12 +288,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pr.pucpr.dosecerta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -301,12 +324,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pr.pucpr.dosecerta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -332,6 +359,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6A2F2442EF9811900B1E2C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6A2F2452EF9811900B1E2C5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6A2F2442EF9811900B1E2C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F6A2F2472EF9811900B1E2C5 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6A2F2442EF9811900B1E2C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F6A2F2492EF9811900B1E2C5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6A2F2442EF9811900B1E2C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F6A2F22C2EF97EC300B1E2C5 /* Project object */;
 }
