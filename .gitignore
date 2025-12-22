@@ -7,6 +7,10 @@
 xcuserdata/
 xcshareddata/
 GoogleService-Info.plist
+userdata/
+
+*.xcuserdatad
+*.xcworkspace/xcuserdata/
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
