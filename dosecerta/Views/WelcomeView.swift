@@ -11,7 +11,7 @@ struct WelcomeView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                welcomeLogo
+                WelcomeLogo
                 Spacer()
                 Text("Bem vindo ao DoseCerta!")
                     .bold()
@@ -39,7 +39,7 @@ struct WelcomeView: View {
 }
 
 @ViewBuilder
-private var welcomeLogo: some View {
+private var WelcomeLogo: some View {
     VStack {
         Image(.doseCertaLogo)
             .resizable()

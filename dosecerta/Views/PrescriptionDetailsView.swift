@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PrescriptionDetailsView: View {
+    @State private var showEditSheet = false
     let prescription: Prescription
     
     var body: some View {
@@ -19,17 +20,23 @@ struct PrescriptionDetailsView: View {
                             .font(.title3.bold())
                         
                         HStack {
-                            Label(medicine.dosage, systemImage: "pills.fill")
+                            DetailRow(icon: "pills.fill", text: medicine.dosage)
                             Spacer()
-                            Label(medicine.frequency, systemImage: "clock.fill")
+                            DetailRow(icon: "alarm.fill", text: medicine.timeToTake)
                         }
-                        .font(.subheadline)
+                        DetailRow(icon: "clock.fill", text: medicine.frequency)
                         
                         if !medicine.observations.isEmpty {
-                            Text(medicine.observations)
-                                .font(.footnote)
-                                .italic()
-                                .foregroundColor(.secondary)
+                            HStack {
+                                Image(systemName: "square.and.pencil")
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.blue)
+                                    .frame(width: 24, alignment: .center)
+                                Text(medicine.observations)
+                                    .font(.footnote)
+                                    .italic()
+                                    .foregroundColor(.secondary)
+                            }
                         }
                     }
                     .padding(.vertical, 8)
@@ -38,6 +45,30 @@ struct PrescriptionDetailsView: View {
         }
         .navigationTitle(prescription.name)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Editar") {
+                    showEditSheet = true
+                }
+            }
+        }
+        .sheet(isPresented: $showEditSheet) {
+            NavigationStack {
+                EditPrescriptionView(prescription: prescription)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func DetailRow(icon: String, text: String) -> some View {
+        HStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.system(size: 16))
+                .foregroundColor(.blue)
+                .frame(width: 24, alignment: .center)
+            Text(text)
+                .font(.subheadline)
+        }
     }
 }
 
@@ -51,7 +82,7 @@ struct PrescriptionDetailsView: View {
                 dosage: "200mg",
                 frequency: "2 vezes ao dia",
                 observations: "Tomar após refeição",
-                timeToTake: "12:00, 00:00"
+                timeToTake: "00:00"
             ),
             Medicine(
                 name: "Dipirona",

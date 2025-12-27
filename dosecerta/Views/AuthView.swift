@@ -77,10 +77,11 @@ struct AuthView: View {
                     Text(viewModel.isSignUp ? "Criar conta" : "Entrar")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(viewModel.isFormValid ? Color.blue : Color.gray.opacity(0.5))
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+                .disabled(!viewModel.isFormValid)
 
                 HStack {
                     Spacer()

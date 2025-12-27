@@ -8,7 +8,8 @@
 import Foundation
 import FirebaseFirestore
 
-struct Medicine: Codable {
+struct Medicine: Codable, Identifiable {
+    var id: String? = UUID().uuidString
     var name: String
     var dosage: String
     var frequency: String
