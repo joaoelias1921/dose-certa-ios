@@ -11,11 +11,13 @@
 		F6A2F2482EF9811900B1E2C5 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F6A2F2472EF9811900B1E2C5 /* FirebaseCore */; };
 		F6A2F24A2EF9811900B1E2C5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F6A2F2492EF9811900B1E2C5 /* FirebaseFirestore */; };
 		F6A2F2702EF9D17A00B1E2C5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F6A2F26E2EF9D17400B1E2C5 /* .gitignore */; };
+		F6FEA9482F058C4C0084460C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F6FEA9472F058C470084460C /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F6A2F2342EF97EC300B1E2C5 /* dosecerta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dosecerta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A2F26E2EF9D17400B1E2C5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F6FEA9472F058C470084460C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +45,7 @@
 		F6A2F22B2EF97EC300B1E2C5 = {
 			isa = PBXGroup;
 			children = (
+				F6FEA9472F058C470084460C /* README.md */,
 				F6A2F2362EF97EC300B1E2C5 /* dosecerta */,
 				F6A2F2352EF97EC300B1E2C5 /* Products */,
 				F6A2F26E2EF9D17400B1E2C5 /* .gitignore */,
@@ -128,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6A2F2702EF9D17A00B1E2C5 /* .gitignore in Resources */,
+				F6FEA9482F058C4C0084460C /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
