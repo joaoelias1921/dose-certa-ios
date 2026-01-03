@@ -22,6 +22,11 @@ struct AuthView: View {
                     Text(viewModel.isSignUp ? "Insira seus dados para que possamos personalizar sua experiência" : "Faça login para continuar")
                         .font(.headline)
                         .foregroundColor(.secondary)
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(.red)
+                            .padding(.vertical, 16)
+                    }
                 }
 
                 VStack(spacing: 15) {
@@ -87,6 +92,7 @@ struct AuthView: View {
                     Spacer()
                     Button(viewModel.isSignUp ? "Já possui uma conta? Faça login" : "Não possui uma conta? Crie uma agora") {
                         withAnimation {
+                            viewModel.errorMessage = ""
                             viewModel.isSignUp.toggle()
                         }
                     }

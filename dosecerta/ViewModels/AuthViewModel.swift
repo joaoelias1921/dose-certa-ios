@@ -31,9 +31,15 @@ class AuthViewModel {
     func signUp() {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
-                self.errorMessage = error.localizedDescription
-                self.showAlert = true
-                return
+                let code = (error as NSError).code
+                switch code {
+                    case AuthErrorCode.invalidEmail.rawValue:
+                        self.errorMessage = "O formato do e-mail é inválido"
+                        return
+                    default:
+                        self.errorMessage = "Algo deu errado por aqui. Verifique os dados e tente novamente"
+                        return
+                }
             }
             
             guard let uid = result?.user.uid else { return }
@@ -57,9 +63,22 @@ class AuthViewModel {
     
     private func login() {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if let error = error {
-                self.errorMessage = error.localizedDescription
-                self.showAlert = true
+            guard let error = error else { return }
+    
+            let message: String
+            let code = (error as NSError).code
+        
+            switch code {
+            case AuthErrorCode.invalidCredential.rawValue,
+                AuthErrorCode.wrongPassword.rawValue,
+                AuthErrorCode.userNotFound.rawValue,
+                AuthErrorCode.invalidEmail.rawValue:
+                message = "Usuário ou senha incorretos. Tente novamente."
+            default:
+                message = "Algo deu errado. Tente novamente mais tarde."
+            }
+            DispatchQueue.main.async {
+                self.errorMessage = message
             }
         }
     }

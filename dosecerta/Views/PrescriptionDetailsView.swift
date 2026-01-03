@@ -61,7 +61,7 @@ struct PrescriptionDetailsView: View {
     
     @ViewBuilder
     private func DetailRow(icon: String, text: String) -> some View {
-        HStack(spacing: 8) {
+        HStack(alignment: .top, spacing: 8) {
             Image(systemName: icon)
                 .font(.system(size: 16))
                 .foregroundColor(.blue)

@@ -71,30 +71,34 @@ struct NewPrescriptionView: View {
     @ViewBuilder
     private func medicineRow(_ medicine: Medicine) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            HStack(alignment: .top) {
+            HStack(alignment: .top, spacing: 8) {
                 Image(systemName: "pill")
                     .foregroundColor(.blue)
+                    .frame(width: 24)
                 Text(medicine.name)
                     .font(.headline)
             }
-            HStack(alignment: .top) {
+            HStack(alignment: .top, spacing: 8) {
                 Image(systemName: "bubbles.and.sparkles")
                     .foregroundColor(.blue)
+                    .frame(width: 24)
                 Text("\(medicine.dosage) • \(medicine.frequency)")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-            HStack(alignment: .top) {
+            HStack(alignment: .top, spacing: 8) {
                 Image(systemName: "alarm")
                     .foregroundColor(.blue)
+                    .frame(width: 24)
                 Text(medicine.timeToTake)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
             if !medicine.observations.isEmpty {
-                HStack(alignment: .top) {
+                HStack(alignment: .top, spacing: 8) {
                     Image(systemName: "square.and.pencil")
                         .foregroundColor(.blue)
+                        .frame(width: 24)
                     Text(medicine.observations)
                         .font(.subheadline)
                         .foregroundColor(.secondary)

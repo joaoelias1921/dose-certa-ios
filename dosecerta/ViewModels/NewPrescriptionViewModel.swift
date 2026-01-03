@@ -29,7 +29,7 @@ class NewPrescriptionViewModel {
             medicines.append(medicine)
             return
         }
-        errorMessage = "Este medicamento já foi adicionado."
+        errorMessage = "Este medicamento já foi adicionado"
     }
     
     func deleteMedicine(_ medicine: Medicine) {
